@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
 
-import '../models/user.dart';
+import '../models/index.dart';
 import '../pages/index.dart';
 
 GoRouter routes(User? user) {

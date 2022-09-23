@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -25,6 +27,14 @@ class MyApp extends StatelessWidget {
     final user = Hive.box<User>('users').get('user');
 
     return MaterialApp.router(
+      supportedLocales: const [
+        Locale('en'),
+      ],
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        FormBuilderLocalizations.delegate,
+      ],
       title: 'Flutter Frontend',
       routerConfig: routes(user),
     );
