@@ -8,6 +8,11 @@ import 'models/user.dart';
 import 'utils/routes.dart';
 
 void main() async {
+  await initApp();
+  runApp(const MyApp());
+}
+
+Future<void> initApp() async {
   await Hive.initFlutter();
 
   Hive.registerAdapter(UserAdapter());
@@ -15,8 +20,6 @@ void main() async {
   await Hive.openBox<User>('users');
 
   GoRouter.setUrlPathStrategy(UrlPathStrategy.path);
-
-  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

@@ -21,6 +21,7 @@ class LoginPage extends StatelessWidget {
             children: [
               const SizedBox(height: 64),
               FormBuilderTextField(
+                key: const ValueKey('email'),
                 name: 'email',
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
@@ -34,6 +35,7 @@ class LoginPage extends StatelessWidget {
               ),
               const Divider(),
               FormBuilderTextField(
+                key: const ValueKey('password'),
                 name: 'password',
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
